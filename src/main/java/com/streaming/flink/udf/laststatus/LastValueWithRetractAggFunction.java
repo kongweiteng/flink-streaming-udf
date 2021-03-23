@@ -18,13 +18,11 @@ import java.util.Objects;
 
 import static org.apache.flink.table.types.utils.DataTypeUtils.toInternalDataType;
 
-/**
- * Built-in LAST_VALUE with retraction aggregate function.
- */
+/** Built-in LAST_VALUE with retraction aggregate function. */
 @Internal
 public final class LastValueWithRetractAggFunction<T>
         extends InternalAggregateFunction<
-        T, LastValueWithRetractAggFunction.LastValueWithRetractAccumulator<T>> {
+                T, LastValueWithRetractAggFunction.LastValueWithRetractAccumulator<T>> {
 
     private transient DataType valueDataType;
 
@@ -38,7 +36,7 @@ public final class LastValueWithRetractAggFunction<T>
 
     @Override
     public DataType[] getInputDataTypes() {
-        return new DataType[]{valueDataType};
+        return new DataType[] {valueDataType};
     }
 
     @Override
@@ -68,9 +66,7 @@ public final class LastValueWithRetractAggFunction<T>
     // Runtime
     // --------------------------------------------------------------------------------------------
 
-    /**
-     * Accumulator for LAST_VALUE with retraction.
-     */
+    /** Accumulator for LAST_VALUE with retraction. */
     public static class LastValueWithRetractAccumulator<T> {
         public T lastValue = null;
         public Long lastOrder = null;
