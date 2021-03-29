@@ -23,7 +23,7 @@ public class CountUDAF extends AggregateFunction<Long, CountUDAF.CountAccum> {
     }
 
     //accumulate提供了如何根据输入的数据更新count UDAF存放状态的accumulator。
-    public void accumulate(CountAccum accumulator, Object iValue) {
+    public void accumulate(CountAccum accumulator, String iValue) {
         accumulator.total++;
     }
 
